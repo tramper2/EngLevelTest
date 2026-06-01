@@ -175,6 +175,30 @@ function setupEventListeners() {
   });
 }
 
+// 레벨과 정답 수에 기반한 토익 예상 점수 매핑 함수
+function calculateToeicScore(level, score) {
+  if (level === 'beginner') {
+    if (score === 7) return "320 ~ 390";
+    if (score === 8) return "390 ~ 460";
+    if (score === 9) return "460 ~ 530";
+    if (score === 10) return "530 ~ 600";
+    return "150 ~ 320"; // 7개 미만 (불합격 등의 경우)
+  } else if (level === 'intermediate') {
+    if (score === 7) return "600 ~ 680";
+    if (score === 8) return "680 ~ 750";
+    if (score === 9) return "750 ~ 810";
+    if (score === 10) return "810 ~ 860";
+    return "450 ~ 600";
+  } else if (level === 'advanced') {
+    if (score === 7) return "860 ~ 900";
+    if (score === 8) return "900 ~ 940";
+    if (score === 9) return "940 ~ 975";
+    if (score === 10) return "975 ~ 990";
+    return "750 ~ 860";
+  }
+  return "100 ~ 990";
+}
+
 // 배열을 무작위로 섞는 Fisher-Yates 알고리즘
 function shuffleArray(array) {
   const newArr = [...array];
@@ -379,6 +403,7 @@ function endTestStage() {
     // 해금 단계 업데이트
     const levelOrder = ['beginner', 'intermediate', 'advanced'];
     const currentIndex = levelOrder.indexOf(selectedLevel);
+    const toeicRange = calculateToeicScore(selectedLevel, correctCount);
     
     if (currentIndex < levelOrder.length - 1) {
       const nextLvl = levelOrder[currentIndex + 1];
@@ -386,12 +411,12 @@ function endTestStage() {
         unlockedLevels.push(nextLvl);
         localStorage.setItem('unlockedLevels', JSON.stringify(unlockedLevels));
       }
-      transitionDesc.textContent = `당신의 점수는 ${correctCount}/${totalQuestions}이며 합격 기준(70%)을 넘었습니다. 다음 레벨(${nextLvl.toUpperCase()})이 해제되었습니다. 계속 도전해보세요!`;
+      transitionDesc.innerHTML = `당신의 점수는 <strong>${correctCount}/${totalQuestions}</strong>이며 합격 기준(70%)을 넘었습니다. 다음 레벨(${nextLvl.toUpperCase()})이 해제되었습니다.<br><br><span style="color: var(--warning); font-weight: 700;"><i class="fa-solid fa-calculator"></i> 이 단계 합격 기준 예상 토익 점수: ${toeicRange}점 수준</span>`;
       proceedBtn.classList.remove('hidden');
       showCertBtn.classList.add('hidden');
     } else {
       // 마지막 고급 단계까지 통과한 경우
-      transitionDesc.textContent = `축하합니다! 최고 난이도인 고급 단계까지 합격하셨습니다. 모든 테스트를 완료했으므로 영예로운 최종 영어 평가 수료증을 획득하셨습니다.`;
+      transitionDesc.innerHTML = `축하합니다! 최고 난이도인 고급 단계까지 합격하셨습니다. 모든 테스트를 완료했으므로 영예로운 최종 영어 평가 수료증을 획득하셨습니다.<br><br><span style="color: var(--warning); font-weight: 700;"><i class="fa-solid fa-calculator"></i> 고급 최종 합격 예상 토익 점수: ${toeicRange}점 수준 (최고 등급)</span>`;
       proceedBtn.classList.add('hidden');
       showCertBtn.classList.remove('hidden');
     }
@@ -400,7 +425,7 @@ function endTestStage() {
     transitionScreen.className = 'card transition-screen fail';
     transitionIcon.className = 'fa-solid fa-triangle-exclamation';
     transitionTitle.textContent = '아쉽게도 합격 기준을 통과하지 못했습니다.';
-    transitionDesc.textContent = `당신의 점수는 ${correctCount}/${totalQuestions} (${Math.round(scorePercent)}%)입니다. 합격하려면 최소 70% 이상 득점하셔야 합니다. 다시 차근차근 읽어보고 복습해보세요.`;
+    transitionDesc.innerHTML = `당신의 점수는 <strong>${correctCount}/${totalQuestions}</strong> (${Math.round(scorePercent)}%)입니다. 합격하려면 최소 70% 이상 득점하셔야 합니다. 다시 차근차근 읽어보고 복습해보세요.`;
     
     proceedBtn.classList.add('hidden');
     showCertBtn.classList.add('hidden');
@@ -456,6 +481,14 @@ function showCertificate() {
   const mm = String(today.getMonth() + 1).padStart(2, '0');
   const dd = String(today.getDate()).padStart(2, '0');
   certDisplayDate.textContent = `발급일자: ${yyyy}. ${mm}. ${dd}.`;
+
+  // 토익 예상 점수 데이터 바인딩
+  const highestScore = completedLevelsData[highestCompletedLevel] ? completedLevelsData[highestCompletedLevel].score : 0;
+  const toeicRange = calculateToeicScore(highestCompletedLevel, highestScore);
+  const certToeicScore = document.getElementById('cert-toeic-score');
+  if (certToeicScore) {
+    certToeicScore.textContent = `${toeicRange}점`;
+  }
 
   // 기본 이름 설정
   const currentSavedName = localStorage.getItem('userName');
