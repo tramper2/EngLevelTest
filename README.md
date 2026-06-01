@@ -30,7 +30,7 @@
 EngLevelTest/
 ├── index.html            # SPA 웹 사이트 메인 구조
 ├── style.css             # 다크 테마, 모바일 반응형, 인쇄 스타일셋 정의
-├── questions.js          # 초급/중급/고급 (각 10문제, 총 30문제) 문제 은행 DB
+├── questions.js          # 초급/중급/고급 (각 100문제, 총 300문제) 문제 은행 DB
 ├── app.js                # 타이머, 채점, 로컬 스토리지 연동, 수료증 출력 핵심 로직
 ├── deploy.ps1            # Git 원격 저장소 업로드 및 Pages 자동 배포 스크립트
 ├── user_preferences.json # 사용자 한국어 설정 보존 파일

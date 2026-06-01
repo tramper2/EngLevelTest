@@ -190,7 +190,7 @@ function startTest() {
   welcomeScreen.classList.add('hidden');
   quizScreen.classList.remove('hidden');
   
-  // 해당 레벨의 20문제 중 무작위로 10문제를 섞어서 가져옴
+  // 해당 레벨의 100문제 중 무작위로 10문제를 섞어서 가져옴
   const allQuestions = questions[selectedLevel];
   activeQuestions = shuffleArray(allQuestions).slice(0, 10);
   
