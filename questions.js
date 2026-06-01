@@ -79,6 +79,86 @@ export const questions = {
       options: ["Would", "Do", "Will", "Can"],
       correctAnswer: 0,
       explanation: "상대방에게 정중하게 마실 것을 권유할 때는 'Would you like ~?' 패턴을 사용합니다."
+    },
+    {
+      id: "b11",
+      type: "grammar",
+      text: "They _______ any pets at home.",
+      options: ["don't have", "doesn't have", "hasn't", "not have"],
+      correctAnswer: 0,
+      explanation: "주어가 3인칭 복수(They)이므로 일반동사 부정문에는 복수형 조동사 부정인 'don't have'를 사용합니다."
+    },
+    {
+      id: "b12",
+      type: "vocabulary",
+      text: "I need to buy some fresh _______ to make a healthy salad.",
+      options: ["vegetables", "meat", "sugar", "salt"],
+      correctAnswer: 0,
+      explanation: "샐러드를 만드는 데 주로 필요한 신선한 재료는 채소(vegetables)입니다."
+    },
+    {
+      id: "b13",
+      type: "grammar",
+      text: "Listen! The baby _______ in the room.",
+      options: ["is crying", "cries", "crying", "cried"],
+      correctAnswer: 0,
+      explanation: "지금 들어보라는 'Listen!'이 있으므로 현재 실시간으로 일어나고 있는 동작인 현재 진행형 'is crying'이 맞습니다."
+    },
+    {
+      id: "b14",
+      type: "vocabulary",
+      text: "January is the _______ month of the year.",
+      options: ["first", "second", "third", "last"],
+      correctAnswer: 0,
+      explanation: "1월(January)은 1년 열두 달 중에서 '첫 번째(first)' 달입니다."
+    },
+    {
+      id: "b15",
+      type: "grammar",
+      text: "This is _______ apple I have ever eaten.",
+      options: ["the sweetest", "sweeter", "sweet", "sweetest"],
+      correctAnswer: 0,
+      explanation: "뒤에 '내가 지금까지 먹어본 것 중에'라는 범위 한정이 있으므로 정관사 'the'와 최상급 형용사인 'the sweetest'를 사용합니다."
+    },
+    {
+      id: "b16",
+      type: "vocabulary",
+      text: "We always go to the _______ to borrow novels and study.",
+      options: ["library", "bookstore", "bakery", "cinema"],
+      correctAnswer: 0,
+      explanation: "책을 '빌리고(borrow)' 공부를 하러 가는 공공장소는 도서관(library)입니다."
+    },
+    {
+      id: "b17",
+      type: "grammar",
+      text: "Can you help _______ with my math homework?",
+      options: ["me", "I", "my", "mine"],
+      correctAnswer: 0,
+      explanation: "동사 'help'의 대상(목적어)이 들어가야 하므로 인칭대명사 목적격인 'me'가 올바릅니다."
+    },
+    {
+      id: "b18",
+      type: "vocabulary",
+      text: "The weather is very _______ today. Let's wear a warm coat.",
+      options: ["cold", "hot", "warm", "sunny"],
+      correctAnswer: 0,
+      explanation: "따뜻한 코트(warm coat)를 입자고 제안하는 것으로 보아 오늘 날씨가 '추운(cold)' 상태임을 유추할 수 있습니다."
+    },
+    {
+      id: "b19",
+      type: "grammar",
+      text: "She _______ speak French very well, but she cannot write it.",
+      options: ["can", "does", "is", "has"],
+      correctAnswer: 0,
+      explanation: "뒤의 'write it(쓰다)'에 대응하여 프랑스어를 말할 수 있는 '능력'을 나타내는 조동사 'can'이 와야 합니다."
+    },
+    {
+      id: "b20",
+      type: "vocabulary",
+      text: "A doctor and a nurse work in a _______.",
+      options: ["hospital", "school", "bank", "farm"],
+      correctAnswer: 0,
+      explanation: "의사(doctor)와 간호사(nurse)가 직업적으로 일하는 주요 장소는 병원(hospital)입니다."
     }
   ],
   intermediate: [
@@ -171,6 +251,96 @@ export const questions = {
       ],
       correctAnswer: 1,
       explanation: "과다 사용(Overuse), 기후 변화(climate change), 오염(pollution)은 직접 언급되어 있으나, 산업 폐기물 처리(Industrial waste disposal)는 언급되지 않았습니다."
+    },
+    {
+      id: "i11",
+      type: "grammar",
+      text: "I would have passed the exam if I _______ harder.",
+      options: ["had studied", "studied", "would study", "have studied"],
+      correctAnswer: 0,
+      explanation: "과거 사실의 반대를 가정하는 가정법 과거완료 문장입니다. 조건절(if-clause)에는 'had + 과거분사(had studied)'가 들어가야 합니다."
+    },
+    {
+      id: "i12",
+      type: "vocabulary",
+      text: "The tech giant plans to _______ a new revolutionary smartphone model next month.",
+      options: ["launch", "lunch", "loose", "locate"],
+      correctAnswer: 0,
+      explanation: "새 상품을 시장에 내놓거나 공개한다는 의미의 '출시하다'는 뜻을 지닌 동사는 'launch'입니다."
+    },
+    {
+      id: "i13",
+      type: "grammar",
+      text: "Although she was completely exhausted, she kept _______ on the report.",
+      options: ["working", "to work", "work", "worked"],
+      correctAnswer: 0,
+      explanation: "동사 'keep'은 목적어로 동명사만을 취하여 '~을 계속하다'라는 뜻을 만듭니다. 따라서 'working'이 적절합니다."
+    },
+    {
+      id: "i14",
+      type: "reading",
+      text: "Read the passage and answer the question:\n\n\"Renewable energy sources, such as wind and solar power, are crucial for reducing global carbon emissions. Unlike fossil fuels, they do not deplete and cause minimal environmental damage during operation.\"\n\nQuestion: What is one advantage of renewable energy mentioned in the passage?",
+      options: [
+        "It is always cheaper to install than fossil fuels.",
+        "It does not run out or deplete over time.",
+        "It is easier to store and transport long-distance.",
+        "It works identically regardless of weather conditions."
+      ],
+      correctAnswer: 1,
+      explanation: "본문에서 화석 연료와 다른 재생에너지의 특징으로 '고갈되지 않는다(do not deplete)'는 점을 직접 서술하고 있습니다."
+    },
+    {
+      id: "i15",
+      type: "grammar",
+      text: "The movie we watched last night was _______ boring that many people left early.",
+      options: ["so", "such", "very", "too"],
+      correctAnswer: 0,
+      explanation: "'so + 형용사 + that + 주어 + 동사' 구문으로 '너무 ~해서 ~하다'의 원인과 결과 관계를 형성합니다. (such 뒤에는 명사가 이어짐)"
+    },
+    {
+      id: "i16",
+      type: "vocabulary",
+      text: "The flight was delayed for three hours due to _______ weather conditions at the airport.",
+      options: ["adverse", "diverse", "reverse", "converse"],
+      correctAnswer: 0,
+      explanation: "비행이 지연된 이유로 날씨가 좋지 않은 상황을 묘사하므로 '불리한, 불우한, 나쁜' 뜻을 가진 'adverse'가 가장 어울립니다."
+    },
+    {
+      id: "i17",
+      type: "grammar",
+      text: "Neither my sister nor my brothers _______ ready for the upcoming family trip.",
+      options: ["are", "is", "am", "was"],
+      correctAnswer: 0,
+      explanation: "'Neither A nor B' 구문이 주어로 쓰일 때 동사의 수일치는 B(my brothers, 복수명사)에 하므로 복수 동사인 'are'가 적절합니다."
+    },
+    {
+      id: "i18",
+      type: "vocabulary",
+      text: "She has a _______ memory and can recall every single detail of our childhood.",
+      options: ["vivid", "vague", "hollow", "shallow"],
+      correctAnswer: 0,
+      explanation: "어릴 적 모든 세부사항까지 기억하므로 '기억이 생생한'이란 뜻의 형용사인 'vivid'가 가장 자연스럽습니다. (vague: 희미한, 모호한)"
+    },
+    {
+      id: "i19",
+      type: "grammar",
+      text: "The teacher asked me where _______ during the summer vacation.",
+      options: ["I lived", "did I live", "do I live", "I live"],
+      correctAnswer: 0,
+      explanation: "의문문이 타동사의 목적어 절로 쓰이는 간접의문문은 '의문사 + 주어 + 동사' 어순을 따르며, 주절 동사(asked)에 맞춰 시제는 과거형인 'I lived'가 되어야 합니다."
+    },
+    {
+      id: "i20",
+      type: "reading",
+      text: "Read the passage and answer the question:\n\n\"Urban green spaces, such as parks and community gardens, provide substantial mental health benefits. Studies show that spending time in green zones lowers stress levels and improves overall mood.\"\n\nQuestion: What is the main benefit of urban green spaces according to the text?",
+      options: [
+        "They completely eliminate air pollution in cities.",
+        "They improve the mental well-being of citizens.",
+        "They attract a high volume of international tourists.",
+        "They generate significant economic revenue for cities."
+      ],
+      correctAnswer: 1,
+      explanation: "녹지 공간이 시민들의 스트레스를 낮추고 기분을 개선하는 등 '정신적 웰빙(mental well-being/health)'을 향상한다고 언급되어 있습니다."
     }
   ],
   advanced: [
@@ -263,6 +433,96 @@ export const questions = {
       options: ["had known", "knew", "knows", "would know"],
       correctAnswer: 0,
       explanation: "'as though(마치 ~처럼)' 뒤에 사실과 다른 반대 가정을 할 때, 주절의 시점보다 그 이전에 알고 있었던 것처럼 행동한 것이므로 과거완료 시제인 'had known'을 사용합니다."
+    },
+    {
+      id: "a11",
+      type: "grammar",
+      text: "Under no circumstances _______ open this confidential file without prior authorization.",
+      options: ["should you", "you should", "did you", "you did"],
+      correctAnswer: 0,
+      explanation: "부정어구 'Under no circumstances'가 문두로 도치되면서 주어와 조동사가 도치되는 'should you' 구조가 성립됩니다."
+    },
+    {
+      id: "a12",
+      type: "vocabulary",
+      text: "The committee's final choice was widely criticized as _______, as it seemed to lack any objective criteria.",
+      options: ["arbitrary", "meticulous", "benevolent", "pragmatic"],
+      correctAnswer: 0,
+      explanation: "객관적인 기준이 없어 보인다는 비판을 받았으므로 '임의적인, 독단적인, 자의적인'을 뜻하는 'arbitrary'가 정답입니다. (meticulous: 꼼꼼한, benevolent: 자비로운, pragmatic: 실용적인)"
+    },
+    {
+      id: "a13",
+      type: "grammar",
+      text: "I would rather you _______ anyone about our private conversation today.",
+      options: ["didn't tell", "don't tell", "wouldn't tell", "not to tell"],
+      correctAnswer: 0,
+      explanation: "'would rather + 주어 + 과거형 동사'는 현재/미래에 대한 정중하고도 완곡한 소망이나 가정을 나타내므로, 부정형 과거시제인 'didn't tell'을 씁니다."
+    },
+    {
+      id: "a14",
+      type: "reading",
+      text: "Read the passage and answer the question:\n\n\"The gig economy, characterized by short-term contracts and freelance projects, offers unprecedented flexibility. However, it lacks the safety nets of traditional employment, such as health insurance, retirement plans, and paid leave. This has ignited critical debates regarding labor rights.\"\n\nQuestion: What is a major criticism of the gig economy according to the passage?",
+      options: [
+        "The lack of flexibility for independent contractors",
+        "The complete absence of job opportunities in digital media",
+        "The deficiency of essential employment benefits and security",
+        "The high educational barriers for entry into freelance work"
+      ],
+      correctAnswer: 2,
+      explanation: "본문에 따르면 긱 이코노미는 전통적인 직장이 제공하는 보험 및 퇴직금 등의 안전망(safety nets / employment benefits)이 부족하다는 결점(deficiency)이 비판거리로 묘사됩니다."
+    },
+    {
+      id: "a15",
+      type: "grammar",
+      text: "No sooner had he hung up the phone _______ it began to ring again persistently.",
+      options: ["than", "when", "that", "then"],
+      correctAnswer: 0,
+      explanation: "'No sooner + had + 주어 + p.p. ~ than + 주어 + 과거동사' 형태로 '~하자마자 바로 ~했다'를 의미하는 상관구문입니다."
+    },
+    {
+      id: "a16",
+      type: "vocabulary",
+      text: "The author's arguments were so _______ that even critical reviewers had to read the book multiple times to grasp the thesis.",
+      options: ["convoluted", "concise", "candid", "colloquial"],
+      correctAnswer: 0,
+      explanation: "논평가들이 주제를 파악하기 위해 여러 번 읽어야 했으므로 책의 주장이 '대단히 복잡하고 난해한' 상태였음을 알 수 있습니다. 이에 걸맞은 단어는 'convoluted'입니다."
+    },
+    {
+      id: "a17",
+      type: "grammar",
+      text: "You shouldn't have spoken to him in that harsh tone. He was visibly _______.",
+      options: ["offended", "offending", "offend", "offends"],
+      correctAnswer: 0,
+      explanation: "상대방의 말투 때문에 감정이 '상하고 화난' 상태가 수동적으로 유발된 것이므로 과거분사형태인 'offended'가 적합합니다."
+    },
+    {
+      id: "a18",
+      type: "vocabulary",
+      text: "The new tax policy had an _______ effect, accidentally hurting low-income households it aimed to protect.",
+      options: ["adverse", "advocate", "adversarial", "adversary"],
+      correctAnswer: 0,
+      explanation: "보호하려던 대상에게 해를 끼친 비정상적인 '부정적이고 불리한' 결과를 낳았으므로 'adverse'가 정답입니다. (adversarial은 대립적인, 적대적인)"
+    },
+    {
+      id: "a19",
+      type: "reading",
+      text: "Read the passage and answer the question:\n\n\"Epigenetics examines how environmental influences and personal behaviors can cause changes that affect gene expression. Crucially, unlike genetic mutations, these epigenetic alterations are reversible and do not modify the core DNA sequence.\"\n\nQuestion: Which of the following statements is true about epigenetic alterations?",
+      options: [
+        "They permanently alter the organism's genetic code.",
+        "They do not alter the underlying DNA sequence.",
+        "They are irreversible and last for generations.",
+        "They are structurally identical to genetic mutations."
+      ],
+      correctAnswer: 1,
+      explanation: "본문에 'do not modify the core DNA sequence(DNA 서열 자체를 변형하지 않는다)'라고 직접 언급하고 있습니다."
+    },
+    {
+      id: "a20",
+      type: "grammar",
+      text: "Should you _______ any difficulties during the installation, please refer to the troubleshooting guide.",
+      options: ["encounter", "encountered", "encounters", "to encounter"],
+      correctAnswer: 0,
+      explanation: "가정법 미래구문에서 'If you should encounter ~'의 If가 생략되고 조동사 Should가 도치되어 나간 구문이므로 뒤에는 동사원형 'encounter'가 그대로 위치해야 합니다."
     }
   ]
 };

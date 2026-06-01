@@ -3,6 +3,7 @@ import { questions } from './questions.js';
 // 상태 관리 변수
 let selectedLevel = 'beginner'; // 현재 선택한 레벨
 let unlockedLevels = ['beginner']; // 해제된 레벨 목록
+let activeQuestions = []; // 현재 테스트 진행 중인 10개의 무작위 질문 목록
 let currentQuestionIndex = 0; // 현재 문제 인덱스
 let correctCount = 0; // 맞춘 문제 수
 let timeLeft = 300; // 남은 시간 (5분 = 300초)
@@ -174,10 +175,24 @@ function setupEventListeners() {
   });
 }
 
+// 배열을 무작위로 섞는 Fisher-Yates 알고리즘
+function shuffleArray(array) {
+  const newArr = [...array];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+}
+
 // 테스트 시작
 function startTest() {
   welcomeScreen.classList.add('hidden');
   quizScreen.classList.remove('hidden');
+  
+  // 해당 레벨의 20문제 중 무작위로 10문제를 섞어서 가져옴
+  const allQuestions = questions[selectedLevel];
+  activeQuestions = shuffleArray(allQuestions).slice(0, 10);
   
   // 상태 리셋
   currentQuestionIndex = 0;
@@ -233,11 +248,10 @@ function handleTimeout() {
 
 // 질문 가져오기 및 렌더링
 function loadQuestion() {
-  const currentQuestions = questions[selectedLevel];
-  const q = currentQuestions[currentQuestionIndex];
+  const q = activeQuestions[currentQuestionIndex];
 
   // 진행 표시 갱신
-  const total = currentQuestions.length;
+  const total = activeQuestions.length;
   const progressPercent = ((currentQuestionIndex) / total) * 100;
   progressBar.style.width = `${progressPercent}%`;
   progressText.textContent = `문제 ${currentQuestionIndex + 1} / ${total}`;
@@ -282,8 +296,7 @@ function selectOption(button, idx) {
 // 정답 확인 및 제출
 function submitAnswer() {
   const selectedIdx = parseInt(submitBtn.dataset.selectedIdx);
-  const currentQuestions = questions[selectedLevel];
-  const q = currentQuestions[currentQuestionIndex];
+  const q = activeQuestions[currentQuestionIndex];
   const btns = optionsList.querySelectorAll('.option-btn');
 
   // 모든 선택 버튼 비활성화 스타일 적용
@@ -319,14 +332,14 @@ function submitAnswer() {
   nextBtn.classList.remove('hidden');
 
   // 진행 상태 100% 반영
-  const progressPercent = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
+  const progressPercent = ((currentQuestionIndex + 1) / activeQuestions.length) * 100;
   progressBar.style.width = `${progressPercent}%`;
 }
 
 // 다음 문제 이동
 function nextQuestion() {
   currentQuestionIndex++;
-  const total = questions[selectedLevel].length;
+  const total = activeQuestions.length;
   
   if (currentQuestionIndex < total) {
     loadQuestion();
@@ -341,7 +354,7 @@ function endTestStage() {
   quizScreen.classList.add('hidden');
   transitionScreen.classList.remove('hidden');
 
-  const totalQuestions = questions[selectedLevel].length;
+  const totalQuestions = activeQuestions.length;
   const scorePercent = (correctCount / totalQuestions) * 100;
   const timeUsed = 300 - timeLeft; // 사용한 시간 (초)
 
